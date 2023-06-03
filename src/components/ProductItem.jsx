@@ -1,4 +1,6 @@
 const ProductItem = ({ product, cart, setCart }) => {
+  const findProduct = cart.find((item) => item.id === product.id);
+
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -14,8 +16,11 @@ const ProductItem = ({ product, cart, setCart }) => {
         <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
         <p className="text-gray-500 my-2">${product.price}</p>
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full h-[50px]"
+          className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full h-[50px] ${
+            findProduct && "opacity-50 cursor-no-drop"
+          }`}
           onClick={() => addToCart(product)}
+          disabled={findProduct}
         >
           Add cart
         </button>
