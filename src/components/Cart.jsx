@@ -8,8 +8,18 @@ const Cart = ({ cart, emptyCart, removeItem }) => {
       <ul>
         {cart.map((item) => (
           <li className="mt-2 flex justify-between" key={item.id}>
-            <span>{item.name}</span>
-            <span>${item.price}</span>
+            <span
+              onClick={() => removeItem(item.id)}
+              className="cursor-pointer"
+            >
+              {item.name}
+            </span>
+            <span
+              onClick={() => removeItem(item.id)}
+              className="cursor-pointer"
+            >
+              ${item.price}
+            </span>
             <button
               className="text-red-500"
               onClick={() => removeItem(item.id)}
