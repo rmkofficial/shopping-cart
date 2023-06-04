@@ -1,17 +1,15 @@
 import { MdShoppingCartCheckout } from "react-icons/md";
-import { MyContext } from "../context/MyContext";
 import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-const CartIcon = ({ cart }) => {
-  const { myState, setMyState } = useContext(MyContext);
-
+const CartIcon = () => {
+  const { cart } = useContext(CartContext);
   return (
     <div className="relative">
       <MdShoppingCartCheckout
         className="text-2xl"
         onClick={() => setMyState("Ramazan")}
       />
-      {myState}
       {cart.length > 0 && (
         <span className="bg-red-500 text-white flex w-5 h-5 justify-center items-center rounded-full absolute -top-2 -right-3 text-xs">
           {cart.length}

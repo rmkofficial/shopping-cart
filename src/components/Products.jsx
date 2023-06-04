@@ -8,8 +8,6 @@ const Products = (props) => {
         <ProductItem
           key={product.id}
           product={product}
-          cart={props.cart}
-          setCart={props.setCart}
         />
       ))}
     </div>
