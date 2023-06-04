@@ -1,5 +1,5 @@
 import { MdShoppingCartCheckout } from "react-icons/md";
-import { MyContext } from "../main";
+import { MyContext } from "../context/MyContext";
 import { useContext } from "react";
 
 const CartIcon = ({ cart }) => {
