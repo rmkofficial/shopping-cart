@@ -3,12 +3,9 @@ import productData from "../productData";
 
 const Products = (props) => {
   return (
-    <div className="grid grid-cols-3 gap-10 mb-8">
+    <div className="grid gap-10 mb-8 md:grid-cols-3">
       {productData.map((product) => (
-        <ProductItem
-          key={product.id}
-          product={product}
-        />
+        <ProductItem key={product.id} product={product} />
       ))}
     </div>
   );
